@@ -1,0 +1,105 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Brand/logo */
+.navbar-brand a {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Menu */
+.navbar-menu {
+    list-style: none;
+    display:flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin: 0 15px;
+}
+
+.navbar-item a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar-item a:hover,
+.navbar-item a.active {
+    background-color: #555;
+}
+
+/* Toggle button untuk mobile */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Responsif: Menu collapse di layar kecil */
+@media (max-width: 50px) {
+    .navbar-menu {
+        position:absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
+        display: none;
+    }
+    
+    .navbar-menu.active {
+        display: unset;
+    }
+    
+    .navbar-toggle {
+        display: flex;
+    }
+    
+    .navbar-item {
+        margin: 0;
+        text-align:right;
+    }
+    
+    .navbar-item a {
+        padding: 10px;
+    }
+}
